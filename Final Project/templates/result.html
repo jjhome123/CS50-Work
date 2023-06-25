@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<table class="border w-75 m-2">
+    <thead>
+        <tr>
+            <th><h3>Original Text:</h3></th>
+            <th><h3>Haba-Checked:</h3></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <p class="input">{{ str }}</p>
+            </td>
+            <td>
+                <p class="input">
+                    {% for word in wordList %}
+                        {% if loop.index0 in indexes %}
+                        <a class="notfound" href="#{{ word }}">{{ word }}</a>
+                        {% else %}
+                        {{ word }}
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h3>Habatan Check:</h3>
+<table class="w-50" id="thesaurustable">
+    <thead>
+        <tr>
+            <th class="border">Word</th>
+            <th class="border">Synonym</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for key, value in synonyms|items %}
+        <tr>
+            <td class="border" id="{{ key }}">{{ key }}</td>
+            <td class="border">{{ value|replace("'","")|replace("[", "")|replace("]", "") }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h3>Search again:</h3>
+{% endblock %}

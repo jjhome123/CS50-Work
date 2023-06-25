@@ -1,0 +1,30 @@
+.input {
+    line-height: 2.0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+#logo {
+    width: 50px;
+}
+
+td, th {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.notfound {
+    background-color: red;
+    color: white;
+    padding: 2px;
+}
+
+#thesaurustable {
+    width: 75%;
+}
+
+textarea {
+    width:60%;
+    height:300px
+}
